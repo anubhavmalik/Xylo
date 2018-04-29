@@ -11,7 +11,7 @@ import AVFoundation
 
 class ViewController: UIViewController, AVAudioPlayerDelegate{
     
-//    var xylophoneSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "note1",ofType: "wav")!)
+    var xylophoneSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "note1",ofType: "wav")!)
     
     var audioPlayer : AVAudioPlayer!
     
@@ -30,6 +30,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate{
     func playSound(tag : Int){
         
         let soundURL = Bundle.main.url(forResource: "note\(tag)", withExtension: "wav")
+        print(tag)
         
         do{
             audioPlayer = try AVAudioPlayer(contentsOf: soundURL!)
